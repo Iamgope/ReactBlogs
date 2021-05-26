@@ -1,0 +1,26 @@
+.date {
+    display: flex;
+    flex-direction: column;
+    width: 5.5rem;
+    height: 5.5rem;
+    border: 1px solid #ececec;
+    color: white;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  }
+  
+  .date__month {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .date__year {
+    font-size: 0.70rem;
+  }
+  
+  .date__day {
+    font-size: 2rem;
+    font-weight: bold;
+  }

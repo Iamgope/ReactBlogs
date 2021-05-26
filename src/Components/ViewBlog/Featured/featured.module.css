@@ -1,0 +1,41 @@
+
+.blogs {
+    max-width: 30rem;
+    width: 80%;
+    padding:10%;
+    margin-top:-20px;
+    animation: blogs-appear 0.8s ease-out forwards;
+  }
+  
+  .blogs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  h2{
+      margin-left: 10%;
+      font-weight: 500;
+  }
+ 
+  hr{
+      margin-right: 30%;
+      border-width: 2px;
+  }
+  @keyframes blogs-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .main{
+      max-width:200%;
+      height:auto;
+      background-position: top; 
+      background-position-x: 90ch;
+      background-position-y: 5ch;
+  }
