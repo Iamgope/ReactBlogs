@@ -34,7 +34,29 @@ const useStyles=makeStyles({
         zIndex: 1,
         padding: '1.2rem 1.5rem 1rem',
         marginTop:-50,
-      }
+      },
+      day:{
+        color:"white",
+        fontFamily:"Arial, sans-seriff",
+        fontWeight:700,
+        fontSize:30,
+        marginLeft:2
+        
+
+    },
+    MandY:{
+        color:"white",
+        fontFamily:"Arial, sans-seriff",
+        fontWeight:400,
+        marginTop:-30,
+        
+    },
+    readMore:{
+      color:'black',
+      fontFamily:"Arial, sans-seriff",
+      fontWeight:700,
+      
+    }
 
 })
 
@@ -42,6 +64,9 @@ const BCard=(props)=>{
     const classes=useStyles()
     let htags=props.hashtags.map((ht)=>ht+' ')
     console.log(props.date)
+    const month=props.date.toLocaleString('en-US',{month:'short'});
+    const year = props.date.getFullYear().toString().substr(-2);;
+    const day=props.date.toLocaleString('en-US',{day:'2-digit'});
   return <Card className={classes.root} elevation={0}>
    
         <CardMedia
@@ -51,7 +76,10 @@ const BCard=(props)=>{
         />
         <div className={classes.content}>
          <div className={classes.dates}>
-         <BDate date={props.date}/>
+         <BDate date={props.date}>
+         <h2 className={classes.day}>{day}</h2>
+         <h3 className={classes.MandY}>{month + ' ' + '/' +year}</h3>
+         </BDate>
 
          </div>
         </div>
@@ -67,7 +95,7 @@ const BCard=(props)=>{
         </CardContent>
 
         <CardActions>
-      <Link to ={`Blogs/${props.id}`}> <Button size="small">Read More..</Button></Link> 
+      <Link to ={`Blogs/${props.id}`}> <Button size="small" className={classes.readMore}>Read More..</Button></Link> 
       </CardActions>
        
 

@@ -4,17 +4,18 @@ import BlogContext from '../../../Store/Blog-context';
 import Card from '../../UI/BCard'
 import MeCard from '../../UI/MeCard';
 import classes from'./BlogList.module.css'
-import FeaturedList from '../Featured/featured';
+import FeaturedList from '../SideLists/featured';
+import PHtags from '../SideLists/PopTags';
 const BlogList=()=>{
  // const  classes=useStyles();
 const context = useContext(BlogContext)
 
      const OutBlogList=context.myBlogs.map((blawg)=><Grid item><Card 
      title={blawg.name}
-    imageLink={blawg.imageLink}
-    hashtags={blawg.hashtag}
-    date={blawg.date}
-    id={blawg.id}
+     imageLink={blawg.imageLink}
+     hashtags={blawg.hashtag}
+     date={blawg.date}
+     id={blawg.id}
      /></Grid>)
     return< >
   <div className={classes.main}>
@@ -32,7 +33,7 @@ const context = useContext(BlogContext)
   />
   </MeCard>
   <MeCard heading={"Popular Tags"}>
-
+<PHtags/>
 </MeCard>
 
 <MeCard heading={"About Me"}>
