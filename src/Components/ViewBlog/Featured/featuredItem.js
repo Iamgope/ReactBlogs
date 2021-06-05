@@ -1,5 +1,5 @@
-import {Card,CardContent, CardMedia,Typography,Grid,Box} from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {Card, CardMedia,Box} from '@material-ui/core';
+import { makeStyles} from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({

@@ -13,9 +13,9 @@ const defaultBlogsState={
 
         {
             id:'first',
-            name:'Learn React in 2 days ',
+            name:'Learn React in only 2 days ',
             content:'We know how fascinating is this to hear that you can learn react just in 2 days!',
-            imageLink:'https://cdn.vox-cdn.com/thumbor/C6_-SDnnoFdS19XRH4XvAYN1BT8=/148x0:1768x1080/1400x1400/filters:focal(148x0:1768x1080):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/49641465/tracer_overwatch.0.0.jpg',
+            imageLink:'https://i.postimg.cc/Sx8gv4B9/steve-johnson-e5-Ldl-AMpk-Ew-unsplash.jpg',
             hashtag:["#life","#sprituality","#apun"],
             Likes:21,
             date:new Date(2020,12,1),
@@ -23,7 +23,7 @@ const defaultBlogsState={
           },
           {
             id:'second',
-            name:'Crack Jee in 2 days',
+            name:'Crack Jee in only 2 days',
             content:'We know how fascinating is this to hear that you can learn react just in 2 days!',
             imageLink:'https://steamcdn-a.akamaihd.net/apps/dota2/images/blog/play/dota_heroes.png',
             hashtag:["#life","#sprituality"],
@@ -43,7 +43,7 @@ const defaultBlogsState={
           },
           {
             id:'Fourth',
-            name:'meriam webster...',
+            name:'meriam webster...is another facebok',
             content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
             imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
             hashtag:["#life","#sprituality","#apnaapna"],
@@ -53,7 +53,7 @@ const defaultBlogsState={
           },
           {
             id:'Fifth',
-            name:'who are you martin',
+            name:'who are you martin i have never seen you',
             content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
             imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
             hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],

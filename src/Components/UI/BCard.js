@@ -5,13 +5,14 @@ import BDate from './BDate';
 const useStyles=makeStyles({
     root:{
        maxWidth:370,
-      margin:20 ,
+      margin:15 ,
        position:"relative",
 
        
     },
     media: {
-       height:490,
+       height:450,
+      
        borderRadius:0,
 
      
@@ -41,7 +42,7 @@ const useStyles=makeStyles({
 
 const BCard=(props)=>{
     const classes=useStyles()
-    let htags=props.hashtags.map((ht)=>ht+'  ')
+    let htags=props.hashtags.map((ht)=>ht+' ')
     console.log(props.date)
   return <Card className={classes.root} elevation={0}>
    
@@ -58,11 +59,12 @@ const BCard=(props)=>{
         </div>
 
         <CardContent>
-        <Typography className={classes.title} color="textPrimary" >
-         {props.title}
-        </Typography>
+       
         <Typography className={classes.hashtag} color="textPrimary">
          {htags}
+        </Typography>
+        <Typography className={classes.title} color="textPrimary" >
+         {props.title}
         </Typography>
         </CardContent>
         <CardActions>

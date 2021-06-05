@@ -1,13 +1,9 @@
 import React,{useContext} from 'react';
-import {Grid,makeStyles} from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 import BlogContext from '../../../Store/Blog-context';
 import Card from '../../UI/BCard'
 import MeCard from '../../UI/MeCard';
-
-
 import classes from'./BlogList.module.css'
-import Featured from '../Featured/featured';
-import FeaturedItem from '../Featured/featuredItem';
 import FeaturedList from '../Featured/featured';
 const BlogList=()=>{
  // const  classes=useStyles();
