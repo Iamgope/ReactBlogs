@@ -6,23 +6,16 @@ import MeCard from '../../UI/MeCard';
 import classes from'./BlogList.module.css'
 import FeaturedList from '../SideLists/featured';
 import PHtags from '../SideLists/PopTags';
-const BlogList=()=>{
+const BlogList=(props)=>{
  // const  classes=useStyles();
 const context = useContext(BlogContext)
 
-     const OutBlogList=context.myBlogs.map((blawg)=><Grid item><Card 
-     title={blawg.name}
-     imageLink={blawg.imageLink}
-     hashtags={blawg.hashtag}
-     date={blawg.date}
-     id={blawg.id}
-     /></Grid>)
     return< >
   <div className={classes.main}>
     <Grid container>
       <Grid item>
-      <Grid container spacing={0} className={classes.root} >
-    {OutBlogList}  
+    <Grid container spacing={0} className={classes.root} >
+    {props.children}
   </Grid>
       </Grid>
       <Grid item className={classes.mCard}>

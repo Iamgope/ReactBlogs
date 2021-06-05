@@ -68,7 +68,7 @@ return<>
         <Box p={1} order={2} >
         
             
-            <Link to={`Blogs/${props.Blog.id}`} className={classes.Link}> <h1 className={classes.content}>{props.Blog.name}</h1></Link>  
+            <Link to={`/Blogs/${props.Blog.id}`} className={classes.Link} exact> <h1 className={classes.content}>{props.Blog.name}</h1></Link>  
                <div className={classes.lists}>
                {hashtags}
 

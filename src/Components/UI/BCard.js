@@ -52,9 +52,15 @@ const useStyles=makeStyles({
         
     },
     readMore:{
-      color:'black',
+      color:'grey',
       fontFamily:"Arial, sans-seriff",
       fontWeight:700,
+      textDecoration:'none',
+      '&:hover': {
+        color:"#6c05fc"
+    },
+    
+
       
     }
 
@@ -95,7 +101,7 @@ const BCard=(props)=>{
         </CardContent>
 
         <CardActions>
-      <Link to ={`Blogs/${props.id}`}> <Button size="small" className={classes.readMore}>Read More..</Button></Link> 
+      <Link to ={`Blogs/${props.id}`} className={classes.readMore}> <p >Read More..</p></Link> 
       </CardActions>
        
 
