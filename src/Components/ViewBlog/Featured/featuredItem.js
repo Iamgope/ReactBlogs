@@ -1,6 +1,6 @@
 import {Card, CardMedia,Box} from '@material-ui/core';
 import { makeStyles} from '@material-ui/core/styles';
-
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root:{
@@ -44,7 +44,10 @@ const useStyles = makeStyles((theme) => ({
 
  lists:{
   marginLeft:-10,
-  }
+  },
+Link:{
+    textDecoration:'none',
+}
   
 
 }))
@@ -65,7 +68,7 @@ return<>
         <Box p={1} order={2} >
         
             
-               <h1 className={classes.content}>{props.Blog.name}</h1>
+            <Link to={`Blogs/${props.Blog.id}`} className={classes.Link}> <h1 className={classes.content}>{props.Blog.name}</h1></Link>  
                <div className={classes.lists}>
                {hashtags}
 

@@ -1,13 +1,14 @@
 import React,{useContext} from 'react';
-import Img from '../../../static/image.jpg';
 import classes from './Blog.module.css';
-import {Card,CardMedia,Grid,} from '@material-ui/core'
+import {Card,CardMedia} from '@material-ui/core'
 import BlogContext from '../../../Store/Blog-context'
 import {useParams} from 'react-router-dom';
+import FoF from '../../UI/Fourofour';
 const ExpandedBlog=(props)=>{
  const val=useParams();
   const context = useContext(BlogContext);
   const index=context.myBlogs.findIndex((blog)=>blog.id===val.blogId);
+  if(index===-1) return<FoF/>
   const Blawg=context.myBlogs[index];
   return<article>
  
@@ -26,10 +27,6 @@ const ExpandedBlog=(props)=>{
 {Blawg.content.split('\n').map((paragraph, index) => <p key={index}>{paragraph}</p>)}
 </div>
 </Card>
-
-
- 
- 
   </article>
 }
 

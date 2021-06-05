@@ -14,6 +14,7 @@ const context = useContext(BlogContext)
     imageLink={blawg.imageLink}
     hashtags={blawg.hashtag}
     date={blawg.date}
+    id={blawg.id}
      /></Grid>)
     return< >
   <div className={classes.main}>

@@ -1,14 +1,12 @@
 import {Card,Typography,CardMedia,CardContent,CardActions,Button} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 import BDate from './BDate';
-
+import {Link} from 'react-router-dom'
 const useStyles=makeStyles({
     root:{
        maxWidth:370,
       margin:15 ,
        position:"relative",
-
-       
     },
     media: {
        height:450,
@@ -67,8 +65,9 @@ const BCard=(props)=>{
          {props.title}
         </Typography>
         </CardContent>
+
         <CardActions>
-        <Button size="small">Read More..</Button>
+      <Link to ={`Blogs/${props.id}`}> <Button size="small">Read More..</Button></Link> 
       </CardActions>
        
 
