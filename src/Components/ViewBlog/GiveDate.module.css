@@ -1,20 +1,25 @@
 .date {
     display: flex;
     flex-direction: column;
-    width: 5.5rem;
-    height: 5.5rem;
-    border: 1px solid #ececec;
-    color: white;
+    width: 5rem;
+    height: 5rem;
+    color: rgb(0, 0, 0);
     border-radius: 12px;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background: rgba(255, 253, 253, 0.568);
+    
+  }
+  .date:hover{
+    background: rgba(255, 255, 255, 0.329);
   }
   
   .date__month {
     font-size: 0.8rem;
     font-weight: bold;
   }
+  
+  
   
   .date__year {
     font-size: 0.70rem;

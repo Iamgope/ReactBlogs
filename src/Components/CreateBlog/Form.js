@@ -39,16 +39,27 @@ const context = useContext(BlogContext);
 const onSubmitHandler=(event)=>{
     event.preventDefault();
     const Blog={
-        id:Math.random(),
+        //id:Math.random(),
+        id:`hello${Math.random()}`,
         name:title,
         content:`${value}`,
-        hashtags:["#hello","#notYou","Pyar_dhokha_hai"],
         imageLink:"Link",
+        hashtag:["#hello","#notYou","Pyar_dhokha_hai"],
         Likes:0,
+        date:new Date()
+
+           /* name:'rain rain go away',
+            content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
+            imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
+            hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
+            Likes:20,
+            date:new Date(2020,1,2)*/
 
     }
 
     context.addBlog(Blog);
+    setValue('');
+    setTitle('');
 
 }
   return(

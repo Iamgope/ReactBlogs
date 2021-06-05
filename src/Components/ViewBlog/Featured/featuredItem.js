@@ -1,30 +1,82 @@
-import Classes from './featuredItem.module.css'
-import Grid from '@material-ui/core/Grid'
-import img from '../../../Gallery/image.jpg'
-import GiveDate from '../GiveDate'
-const FeaturedItem=(props)=>{
+import {Card,CardContent, CardMedia,Typography,Grid,Box} from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-   
-    // const hashtag1=props.hashtags[0];
-    // const hashtag2=props.hashtags[1];
-    return <li className={Classes.featured}>
-        <Grid container spacing={2}>
-        <Grid item xs={2}>
-           
-        </Grid>
 
-            <Grid item xs={10}>
-             <h3>{props.name}</h3>
-            </Grid>
-            <div className={Classes.description}>{props.content}</div>
-            {/* <Grid item xs={12}>
-             <p>{hashtag1} {hashtag2}</p>
-            </Grid> */}
-          
-            
-       </Grid>
+const useStyles = makeStyles((theme) => ({
+  root:{
+      display:'flex',
       
-     
-    </li>
+
+  },
+  media: {
+    width: 80,
+   height:110,
+    borderRadius:0,
+
+  
+   },
+
+  content: {
+      width:250,
+      maxHeight:150,
+    fontWeight:700,
+    fontFamily:"Arial,san-serrif",
+    fontSize:20,
+    color:"Black",
+    marginTop:10,
+    '&:hover': {
+        color:'#6c05fc'
+    }
+  },
+
+  hashtags:{
+    fontWeight:700,
+    fontFamily:"Arial,san-serrif",
+    fontSize:15,
+      color:'#fc0591',
+      '&:hover': {
+        color:'#6c05fc'
+    },
+    display:"inline",
+    textAlign:'left',
+    margin:5,
+  },
+
+ lists:{
+  marginLeft:-10,
+  }
+  
+
+}))
+const FeaturedItem=(props)=>{
+    const classes=useStyles()
+    const hashtags=props.Blog.hashtag.map((ht)=><li className={classes.hashtags}>{ht}</li>);
+return<>
+<div style={{ width: '100%' }} className={classes.root}>
+      <Box display="flex" p={1} bgcolor="background.paper">
+        <Box p={1} order={1} >
+          <Card>
+              <CardMedia
+              className={classes.media}
+               image={props.Blog.imageLink}
+              />
+          </Card>
+        </Box>
+        <Box p={1} order={2} >
+        
+            
+               <h1 className={classes.content}>{props.Blog.name}</h1>
+               <div className={classes.lists}>
+               {hashtags}
+
+               </div>
+        
+    
+        </Box>
+       
+      </Box>
+    </div>
+</>
 }
-export default FeaturedItem;
+
+export default FeaturedItem

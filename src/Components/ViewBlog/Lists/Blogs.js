@@ -1,10 +1,10 @@
-import {Card} from '@material-ui/core'
+import {Card,Paper} from '@material-ui/core'
 import BlogList from './BlogList'
 import classes from "./Blogs.module.css";
 const Blogs=(props)=>{
-    return <Card className={classes.card}>
+    return <Paper elevation={0} className={classes.card}>
        <BlogList blogs={props.Blogs}/>
-    </Card>
+    </Paper>
 }
 
 export default Blogs;
