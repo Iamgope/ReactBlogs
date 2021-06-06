@@ -1,7 +1,6 @@
 import React,{useContext} from 'react';
 import {Grid} from '@material-ui/core'
 import BlogContext from '../../../Store/Blog-context';
-import Card from '../../UI/BCard'
 import MeCard from '../../UI/MeCard';
 import classes from'./BlogList.module.css'
 import FeaturedList from '../SideLists/featured';
@@ -13,7 +12,9 @@ const context = useContext(BlogContext)
     return< >
   <div className={classes.main}>
     <Grid container>
-      <Grid item>
+      <Grid item className={classes.heading}>
+        <div>
+        </div>
     <Grid container spacing={0} className={classes.root} >
     {props.children}
   </Grid>

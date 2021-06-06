@@ -33,7 +33,7 @@ const defaultBlogsState={
           },
           {
             id:'Third',
-            name:'find your soul and soulmate in 2 days',
+            name:'Find your soul and soulmate in 2 days',
             content:'We know  how fascinating is this to hear that you can learn react just in 2 days!',
             imageLink:'https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg',
             hashtag:["#life","#sprituality","#bhawaan_hai"],
@@ -43,7 +43,7 @@ const defaultBlogsState={
           },
           {
             id:'Fourth',
-            name:'meriam webster...is another facebok',
+            name:'Like i said Corona is not a virus',
             content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
             imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
             hashtag:["#life","#sprituality","#apnaapna"],
@@ -53,7 +53,7 @@ const defaultBlogsState={
           },
           {
             id:'Fifth',
-            name:'who are you martin i have never seen you',
+            name:'Who are you martin i  had never seen you',
             content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
             imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
             hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
@@ -61,57 +61,7 @@ const defaultBlogsState={
             date:new Date(2020,1,2)
 
           },
-          {
-            id:'sixth',
-            name:'Loss 100 kilo in 2 days',
-            content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
-            imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
-            hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
-            Likes:21,
-            date:new Date(2020,1,2)
-
-          },
-          {
-            id:'seventh',
-            name:'what the fuck',
-            content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
-            imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
-            hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
-            Likes:18,
-            date:new Date(2020,1,2)
-
-          },
-          {
-            id:'eighth',
-            name:'come again another day',
-            content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
-            imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
-            hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
-            Likes:20,
-            date:new Date(2020,1,2)
-
-          },
-          {
-            id:'ninth',
-            name:'rain rain go away',
-            content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
-            imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
-            hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
-            Likes:20,
-            date:new Date(2020,1,2)
-
-          },
-          {
-            id:'tenth',
-            name:'No pain no gain',
-            content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
-            imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
-            hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
-            Likes:19,
-            date:new Date(2020,1,2)
-
-          }
-
+     
 
 
         ],

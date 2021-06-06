@@ -2,8 +2,8 @@ import {useContext} from 'react';
 import BlogContext from '../../../Store/Blog-context';
 import {Grid,makeStyles} from '@material-ui/core'
 const comp_tags=(a,b)=>{
-  if(a.count>b.count) return 1;
-  else if(a.count<b.count) return -1;
+  if(a.count<b.count) return 1;
+  else if(a.count>b.count) return -1;
   else return 0;
 }
 
@@ -45,7 +45,7 @@ const PHtags=()=>{
             }
         }
     }
-
+tags.sort(comp_tags);
 const val=tags.map((htag)=><Grid item className={classes.text}><h3>{htag.name}</h3></Grid>)
     return <Grid container spacing={2} className={classes.root}>{val}</Grid>
 }

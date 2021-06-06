@@ -16,7 +16,9 @@ const OutBlogs=()=>{
     id={blawg.id}
     /></Grid>)
 
-    return<><BlogList>{OutBlogList}</BlogList></>
+    return<>
+    <BlogList heading={"Latest Posts"}>
+    {OutBlogList}</BlogList></>
 }
 
 export default OutBlogs;

@@ -1,6 +1,5 @@
 import {Card,Typography,CardMedia,CardContent,CardActions,Button} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import BDate from './BDate';
 import {Link} from 'react-router-dom'
 const useStyles=makeStyles({
     root:{
@@ -34,14 +33,17 @@ const useStyles=makeStyles({
           fontSize:15,
           
       },
-      content: {
-        position: 'absolute',
-        top: 0,
-        width: '90%',
-        zIndex: 1,
-        padding: '1.2rem 1.5rem 1rem',
-        marginTop:-50,
+      contents: {
+        color:'black',
+        fontWeight:500,
+        
       },
+      date:{
+          fontSize:20,
+          fontWeight:100,
+          color:'gray',
+          
+      }
    
 
 
@@ -68,7 +70,9 @@ const ExBCard=(props)=>{
           image={props.Blog.imageLink}
           title="my image"
         />
-        <Typography>
+                    <h4 className={classes.date}>{`${month} ${day} ${year}`}</h4>
+
+        <Typography className={classes.contents}>
            {content}
        </Typography>
        <Typography className={classes.hashtag} color="textPrimary">

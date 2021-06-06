@@ -8,8 +8,11 @@
             margin:auto;
             max-width: 800px;
              margin-left: 20ch;
-          
+            
+           }.mCard{
+             padding: 30px;
            }
+          
           
          
 }
@@ -23,6 +26,7 @@
        .mCard {
         margin-left:10%;
         padding: 30px;
+        
        
       
       }
