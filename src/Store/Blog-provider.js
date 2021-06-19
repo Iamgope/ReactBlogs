@@ -73,7 +73,7 @@ const defaultBlogsState={
             imageLink:'https://cdn.vox-cdn.com/thumbor/C6_-SDnnoFdS19XRH4XvAYN1BT8=/148x0:1768x1080/1400x1400/filters:focal(148x0:1768x1080):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/49641465/tracer_overwatch.0.0.jpg',
             hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
             Likes:21,
-            date:new Date(2020,12,1)
+            date: new Date(2020,12,1)
           },
           {
             id:'second',

@@ -1,51 +1,55 @@
-.main{
-    margin-top: 10%;
+.main {
+  margin-top: 10%;
+}
+.headLine {
+  color: #1d171a;
+  font-size: 6ch;
+  margin: auto;
+  margin-left: 17%;
 }
 
-
 @media screen and (min-width: 800px) {
-        .root{
-            margin:auto;
-            max-width: 800px;
-             margin-left: 20ch;
-            
-           }.mCard{
-             padding: 30px;
-           }
-          
-          
-         
+  .root {
+    margin: auto;
+    max-width: 800px;
+    margin-left: 20ch;
+  }
+  .mCard {
+    padding: 30px;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .root{
-        margin:auto;
-        max-width: 800px;
-       
-       }
-       .mCard {
-        margin-left:10%;
-        padding: 30px;
-        
-       
-      
-      }
+  .root {
+    margin: auto;
+    max-width: 800px;
+  }
+  .mCard {
+    margin-left: 10%;
+    padding: 30px;
+  }
 }
 
 .Featured {
-    animation: blogs-appear 0.8s ease-out forwards;
-    
-  }
-  
-  @keyframes blogs-appear {
-    from {
-      opacity: 0;
-      transform: translateY(3rem);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  animation: blogs-appear 0.8s ease-out forwards;
+}
+
+@keyframes blogs-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
   }
 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,13 +1,12 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
-import classes from "./Navbar.module.css";
-import { makeStyles } from "@material-ui/core";
-import { NavLink,useParams } from "react-router-dom";
+import { makeStyles, Button } from "@material-ui/core";
+import { NavLink } from "react-router-dom";
+import Logo from "../../static/logo.png";
 function HideOnScroll(props) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -27,8 +26,28 @@ const useStyles = makeStyles({
     background: "#6c05fc",
   },
   button: {
+    backgroundColor: "#fc0591",
+    "&:hover": {
+      backgroundColor: "",
+    },
+    color: "white",
+    fontSize: 15,
+    fontFamily: "Arial , sans-serrif",
+  },
+  buttonPos: {
     margin: "auto",
-    marginRight: 10,
+    marginRight: 30,
+  },
+  logo: {
+    marginTop: 2,
+    maxWidth: 80,
+  },
+  blogtext: {
+    marginTop: -50,
+    marginLeft: 5,
+    color: "#fc0591",
+    fontSize: 25,
+    fontWeight: 100,
   },
 });
 const Navbar = (props) => {
@@ -39,10 +58,19 @@ const Navbar = (props) => {
       <HideOnScroll {...props}>
         <AppBar color="inherit" className={Classes.root}>
           <Toolbar>
-            <div className={Classes.button}>
+            <NavLink to="/home" exact>
+              <img src={Logo} alt="logo" className={Classes.logo} />
+            </NavLink>
+
+            <div className={Classes.buttonPos}>
               <NavLink to="/create" exact>
-                
-                <button>Write</button>
+                <Button
+                  variant="outlined"
+                  className={Classes.button}
+                  color="secondary"
+                >
+                  Write
+                </Button>
               </NavLink>
             </div>
           </Toolbar>

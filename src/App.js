@@ -6,6 +6,7 @@ import { Route, Switch,Redirect } from "react-router-dom";
 import ExpandedBlog from "./Components/ViewBlog/Lists/Blog";
 import Header from "./Components/Header/Header";
 import OutBlogs from "./Components/ViewBlog/Lists/OutBlog";
+import BlogList from "./Components/ViewBlog/Lists/BlogList";
 function App() {
   return (
     <Switch>
@@ -17,7 +18,7 @@ function App() {
 
     <Route path="/Home" exact>
      
-     <OutBlogs/>
+     <BlogList/>
      </Route>
       <Route path="/Blogs/:blogId">
        <ExpandedBlog/>

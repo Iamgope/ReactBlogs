@@ -1,24 +1,52 @@
-import React,{useContext} from 'react';
-import BlogContext from '../../../Store/Blog-context'
-import {useParams} from 'react-router-dom';
-import FoF from '../../UI/Fourofour';
-import ExBCard from '../../UI/ExBCard'
-import BlogList from './BlogList';
-const ExpandedBlog=(props)=>{
- const val=useParams();
-  const context = useContext(BlogContext);
-  const index=context.myBlogs.findIndex((blog)=>blog.id===val.blogId);
-  if(index===-1) return<FoF/>
-  const Blog =context.myBlogs[index]
-  return<article>
-    <BlogList>
-    <ExBCard
- key={Blog.id}
- Blog={Blog}
- />
-    </BlogList>
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import FoF from "../../UI/Fourofour";
+import ExBCard from "../../UI/ExBCard";
+import BlogList from "./BlogList";
+import { getSingleBlog } from "../../../Store/api";
+import LoadingSpinner from "../../UI/LoadingSpinner";
+import useHttp from "../../../Store/use-http";
+const ExpandedBlog = (props) => {
+  const params = useParams();
+  const { blogId } = params;
 
-  </article>
-}
+  const {
+    sendRequest,
+    status,
+    data: loadedBlog,
+    error,
+  } = useHttp(getSingleBlog, true);
+  useEffect(() => {
+    sendRequest(blogId);
+  }, [sendRequest, blogId]);
+
+  if (status === "pending") {
+    return (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+  if (error) {
+    return <p className="centered">{error}</p>;
+  }
+
+  if (!loadedBlog) {
+    return <p>No Blog found!</p>;
+  }
+  const Blog = loadedBlog;
+  return (
+    <article>
+      <BlogList>
+        <ExBCard
+          key={Blog.id}
+          Blog={Blog}
+          headLine={""}
+          date={new Date(Blog.date)}
+        />
+      </BlogList>
+    </article>
+  );
+};
 
 export default ExpandedBlog;

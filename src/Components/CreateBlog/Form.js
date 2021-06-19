@@ -1,93 +1,145 @@
-import React, {useContext} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import BlogContext from '../../Store/Blog-context'
+import React, { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import { useHistory } from "react-router-dom";
+import { addBlog } from "../../Store/api";
+import useHttp from "../../Store/use-http";
 const useStyles = makeStyles((theme) => ({
-    root: {
-        marginTop:200,
-        marginLeft:100,
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: '100ch',
-      
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: 400,
+      "@media (min-width:780px)": {
+        width: 800,
       },
-      
     },
-  }));
-const CreateBlog=()=>{
-
-const context = useContext(BlogContext);
-
-
-
-
-    const classes = useStyles();
-    const [value, setValue] = React.useState('');
-    const [title,setTitle]=React.useState('');
-    const handleChange = (event) => {
-       
-        setValue(event.target.value);
-
-      };
-      const TitlehandleChange = (event) => {
-       
-        setTitle(event.target.value);
-
-      };
-
-const onSubmitHandler=(event)=>{
-    event.preventDefault();
-    const Blog={
-        //id:Math.random(),
-        id:`hello${Math.random()}`,
-        name:title,
-        content:`${value}`,
-        imageLink:"Link",
-        hashtag:["#hello","#notYou","Pyar_dhokha_hai"],
-        Likes:0,
-        date:new Date()
-
-           /* name:'rain rain go away',
-            content:'We know how  fascinating is this to hear that you can learn react just in 2 days!',
-            imageLink:'https://www.pcclean.io/wp-content/uploads/2019/04/559308.jpg',
-            hashtag:["#life","#sprituality","#apun_hi_bhawaan_hai"],
-            Likes:20,
-            date:new Date(2020,1,2)*/
-
+  },
+  main: {
+    textAlign: "center",
+    marginTop: 50,
+  },
+  button: {
+    margin: 20,
+    fontSize: 20,
+    color: "white",
+    backgroundColor: "#fc0591",
+    "&:hover": {
+      backgroundColor: "",
+      color: "#fc0591",
+    },
+  },
+  head: {
+    fontSize: 40,
+  },
+  hashtags: {
+    maxWidth: 20,
+  },
+}));
+const CreateBlog = () => {
+  const { sendRequest, status } = useHttp(addBlog);
+  const history = useHistory();
+  useEffect(() => {
+    if (status === "completed") {
+      history.push("/home");
     }
+  }, [status, history]);
 
-    context.addBlog(Blog);
-    setValue('');
-    setTitle('');
+  const classes = useStyles();
+  const [value, setValue] = useState("");
+  const [title, setTitle] = useState("");
+  const [hashtags, setHashtags] = useState([]);
+  const [imageLink, setImageLink] = useState("");
 
-}
-  return(
-<Grid xs={10}>
-<form className={classes.root} noValidate autoComplete="off" onSubmit={onSubmitHandler}>
-     <TextField
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+  const TitlehandleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const Imagehandler = (event) => {
+    setImageLink(event.target.value);
+  };
+
+  const hashtagsHandler = (event) => {
+    const hello = event.target.value;
+    const hTag = hello.split(" ");
+    setHashtags(hTag);
+  };
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    const htags = hashtags.map((ht) => "#" + ht);
+    console.log("lol");
+    const Blog = {
+      //id:Math.random(),
+      name: title,
+      content: `${value}`,
+      imageLink: imageLink,
+      hashtag: htags,
+      Likes: 0,
+      date: new Date(),
+    };
+
+    sendRequest(Blog);
+    console.log(Blog);
+  };
+  return (
+    <div className={classes.main}>
+      <h1 className={classes.head}>Let's Write</h1>
+      <form
+        className={classes.root}
+        noValidate
+        autoComplete="off"
+        onSubmit={onSubmitHandler}
+      >
+        <TextField
           id="outlined-multiline-static"
           label="Title"
+          size="Small"
           variant="outlined"
           onChange={TitlehandleChange}
           value={title}
-    />
-      <TextField
+        />
+
+        <TextField
           id="outlined-multiline-static"
           label="Content"
           multiline
-          rows={4}
+          rows={10}
           value={value}
           variant="outlined"
           onChange={handleChange}
         />
-         
-        <button>Submit</button>
-</form>
+        <TextField
+          label="ImageLink"
+          variant="outlined"
+          onChange={Imagehandler}
+        />
+        <TextField
+          label="hashtags(don't use # use space for diffrent hashtag) "
+          InputProps={{
+            startAdornment: <InputAdornment position="start">#</InputAdornment>,
+          }}
+          variant="outlined"
+          onChange={hashtagsHandler}
+        />
 
-</Grid>
-
-  )
-}
+        <div>
+          <Button
+            variant="outlined"
+            className={classes.button}
+            type="submit"
+            color="secondary"
+          >
+            Post
+          </Button>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default CreateBlog;

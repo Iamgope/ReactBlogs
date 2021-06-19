@@ -1,24 +1,23 @@
-import {useContext} from 'react';
-import BlogContext from '../../../Store/Blog-context';
-import Card from '../../UI/BCard'
-import {Grid} from '@material-ui/core'
-import BlogList from './BlogList';
+import Card from "../../UI/BCard";
+import { Grid } from "@material-ui/core";
 
+const OutBlogs = (props) => {
+  //const context = useContext(BlogContext)
 
-const OutBlogs=()=>{
-    const context = useContext(BlogContext)
+  const OutBlogList = props.loadedBlogs.map((blawg) => (
+    <Grid item>
+      <Card
+        title={blawg.name}
+        imageLink={blawg.imageLink}
+        hashtags={blawg.hashtag}
+        date={new Date(blawg.date)}
+        id={blawg.id}
+        key={blawg.id}
+      />
+    </Grid>
+  ));
 
-    const OutBlogList=context.myBlogs.map((blawg)=><Grid item><Card 
-    title={blawg.name}
-    imageLink={blawg.imageLink}
-    hashtags={blawg.hashtag}
-    date={blawg.date}
-    id={blawg.id}
-    /></Grid>)
-
-    return<>
-    <BlogList heading={"Latest Posts"}>
-    {OutBlogList}</BlogList></>
-}
+  return <>{OutBlogList}</>;
+};
 
 export default OutBlogs;
